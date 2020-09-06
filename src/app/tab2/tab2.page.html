@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar (click)="doRefresh()">
+    <ion-title>Refresh</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+<ion-list>
+  <ion-item *ngFor="let item of Item">
+    <ion-grid>
+      <ion-row>
+        <ion-col  (click)="moreInfo(item)" style="width: 300px">
+          <ion-row>
+            <p style="font-weight: bold; font-size: 8px; color: #b2b2b2;">{{item.field1}}</p>
+          </ion-row>
+          <ion-row>
+            <p style="font-weight: bold; font-size: 15px; color: #000000;">{{item.field2}}</p>
+          </ion-row>
+        </ion-col>
+        <ion-col  style="width: 100px">
+          <button ion-button icon-only style="padding-top: 30%;background-color: #ffffff">
+            <ion-icon style="zoom:0.8;color: #000000;" name="close-circle" (click)="removeSF(item)"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+</ion-list>
+</ion-content>

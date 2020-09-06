@@ -1,0 +1,8 @@
+{
+  "name": "paliApp",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,45 @@
+<ion-content [fullscreen]="true">
+    <ion-toolbar>
+      <ion-row>
+      <ion-searchbar [(ngModel)]="searchValue" (ionInput)="offlineSearch($event)"></ion-searchbar>
+      <ion-buttons end>
+        <button ion-button icon-only (click)='search()'>
+          <ion-icon style="zoom:0.8;color: #000000;" name="search"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-buttons end>
+        <button ion-button icon-only (click)='speechRecognitionExecute()'>
+          <ion-icon style="zoom:0.8;color: #000000;" name="mic"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-buttons end>
+        <button ion-button icon-only (click)='typeChange($event)'>
+          <ion-icon style="zoom:0.8;color: #000000;" name="settings"></ion-icon>
+        </button>
+      </ion-buttons>
+      </ion-row>
+    </ion-toolbar>
+  <ion-list>
+    <ion-spinner style="align-items: center" name="bubbles" *ngIf="isLoading"></ion-spinner>
+    <ion-item *ngFor="let item of Item">
+      <ion-grid>
+        <ion-row>
+        <ion-col  (click)="moreInfo(item)" style="width: 300px">
+        <ion-row>
+          <p style="font-weight: bold; font-size: 8px; color: #b2b2b2;">{{item.field1}}</p>
+        </ion-row>
+        <ion-row>
+          <p style="font-weight: bold; font-size: 15px; color: #000000;">{{item.field2}}</p>
+        </ion-row>
+        </ion-col>
+        <ion-col  style="width: 100px">
+          <button ion-button icon-only style="padding-top: 30%;background-color: #ffffff">
+            <ion-icon *ngIf="checkIsBookMark(item) === false" style="zoom:0.8;color: #000000;" name="bookmark" (click)="saveSF(item)"></ion-icon>
+            <ion-icon *ngIf="checkIsBookMark(item) === true" style="zoom:0.8;color: #000000;" name="close-circle" (click)="removeSF(item)"></ion-icon>
+          </button>
+        </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+</ion-content>

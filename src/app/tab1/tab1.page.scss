@@ -1,0 +1,30 @@
+page-home {
+
+}
+ion-spinner {
+  display: block;
+  margin: auto;
+}
+ion-alert {
+  &.alert-warning {
+    .alert-head {
+      color: #fff;
+      margin-bottom: 10px;
+    }
+  }
+  &.alert-danger {
+    .alert-head {
+      background: #7aecff;
+      color: #000000;
+      margin-bottom: 10px;
+    }
+  }
+  &.alert-success {
+    .alert-head {
+      background: #2ec95c;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+  }
+
+}
